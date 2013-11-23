@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ManagerView_Android</string>
+    <string name="app_name">Network Information</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-
+    <string name="dataState">Data State</string>
+    <string name="phoneType">Phone Type</string>
+    <string name="networkType">Network Type</string>
+    <string name="cellID">Cell ID</string>
+    <string name="lac">LAC</string>
+    <string name="mcc">MCC</string>
+    <string name="mnc">MNC</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
+    <string name="networkOperatorName">Network Operator</string>
+    <string name="simOperatorName">SIM Operator</string>
+    
 </resources>
