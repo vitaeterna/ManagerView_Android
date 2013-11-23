@@ -24,11 +24,10 @@ import android.content.Context;
 import android.telephony.NeighboringCellInfo;
 import android.telephony.TelephonyManager;
 import android.telephony.gsm.GsmCellLocation;
+import android.view.LayoutInflater;
 import android.view.Menu;
-import android.widget.LinearLayout;
-import android.widget.TableLayout;
-import android.widget.TableLayout.LayoutParams;
-import android.widget.TableRow;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class TelephonyManagerActivity extends Activity {
@@ -147,42 +146,22 @@ public class TelephonyManagerActivity extends Activity {
 
 		((TextView) findViewById(R.id.networkType)).setText(content);
 
-//		List<NeighboringCellInfo> neighboringCellInfos = telephonyManager
-//				.getNeighboringCellInfo();
+		List<NeighboringCellInfo> neighboringCellInfos = telephonyManager.getNeighboringCellInfo();		
 
-//		if (!neighboringCellInfos.isEmpty()) {
-			TableLayout table = new TableLayout(this);
+		if (!neighboringCellInfos.isEmpty()) {
 			
-//			for (NeighboringCellInfo neighboringCellInfo : neighboringCellInfos) {
-				TableRow rowCellId = new TableRow(this);
-//				TableRow rowLac = new TableRow(this);
-//				TableRow rowMcc = new TableRow(this);
-//				TableRow rowMnc = new TableRow(this);
-				
-				TextView labelCellId = new TextView(this);
-				labelCellId.setWidth(150);
-				labelCellId.setHeight(LayoutParams.WRAP_CONTENT);
-				labelCellId.setText(getResources().getString(R.string.cellID));
-				labelCellId.setTextAppearance(this, android.R.style.TextAppearance_Medium);
-//				TextView labelLac = new TextView(this);
-//				TextView labelMcc = new TextView(this);
-//				TextView labelMnc = new TextView(this);
-				
-				TextView valueCellId = new TextView(this);
-				valueCellId.setWidth(LayoutParams.WRAP_CONTENT);
-				valueCellId.setHeight(LayoutParams.WRAP_CONTENT);
-				valueCellId.setText(getResources().getString(R.string.cellID));
-				valueCellId.setTextAppearance(this, android.R.style.TextAppearance_Medium);
-//				TextView valueLac = new TextView(this);
-//				TextView valueMcc = new TextView(this);
-//				TextView valueMnc = new TextView(this);
-				
-				rowCellId.addView(labelCellId);
-				rowCellId.addView(valueCellId);
-				table.addView(rowCellId);
-				((LinearLayout) findViewById(R.id.content)).addView(table);
-//			}
-//		}
+		LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		View view = inflater.inflate(R.layout.table_template, null);
+		
+			for (int i = 0; i < neighboringCellInfos.size(); i++) {
+
+				((TextView) view.findViewById(R.id.cellID)).setText(neighboringCellInfos.get(i).getCid());
+				((TextView) view.findViewById(R.id.lac)).setText(neighboringCellInfos.get(i).getLac());
+			
+				View insertPoint = findViewById(R.id.content);
+				((ViewGroup) insertPoint).addView(view, i + 1, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+			}
+		}
 		GsmCellLocation cellLocation = (GsmCellLocation) telephonyManager
 				.getCellLocation();
 
