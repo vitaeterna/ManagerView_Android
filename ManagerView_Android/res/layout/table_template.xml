@@ -1,6 +1,6 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
@@ -20,7 +20,6 @@
         tools:context=".TelephonyManagerActivity" >
 
         <TableRow>
-
             <TextView
                 android:id="@+id/cellIDLabel"
                 android:layout_width="150dp"
@@ -36,9 +35,8 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@android:color/darker_gray" />
         </TableRow>
-
+        
         <TableRow>
-
             <TextView
                 android:id="@+id/lacLabel"
                 android:layout_width="150dp"
@@ -54,9 +52,8 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@android:color/darker_gray" />
         </TableRow>
-
+        
         <TableRow>
-
             <TextView
                 android:id="@+id/mccLabel"
                 android:layout_width="150dp"
@@ -74,7 +71,6 @@
         </TableRow>
 
         <TableRow>
-
             <TextView
                 android:id="@+id/mncLabel"
                 android:layout_width="150dp"
@@ -92,7 +88,6 @@
         </TableRow>
 
         <TableRow>
-
             <TextView
                 android:id="@+id/longitudeLabel"
                 android:layout_width="150dp"
@@ -110,7 +105,6 @@
         </TableRow>
 
         <TableRow>
-
             <TextView
                 android:id="@+id/latitudeLabel"
                 android:layout_width="150dp"
@@ -126,6 +120,7 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@android:color/darker_gray" />
         </TableRow>
+        
     </TableLayout>
 
 </LinearLayout>
