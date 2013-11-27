@@ -10,13 +10,6 @@
         android:layout_height="466dp"
         android:orientation="vertical" >
 
-
-	        <Button
-	            android:id="@+id/button1"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:text="View Wifi Info" />        
-        
 	    <TableLayout
 	        android:layout_width="match_parent"
 	        android:layout_height="462dp"
@@ -212,6 +205,11 @@
 	                android:textColor="@android:color/darker_gray" />
 	        </TableRow>
 
+	        <Button
+	            android:id="@+id/button1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="View Wifi Info" />
 	        
 	    </TableLayout>
 	    

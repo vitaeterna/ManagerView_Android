@@ -32,8 +32,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import de.mobilecomp.managerview.WifiManagerActivity;
-
 
 public class TelephonyManagerActivity extends Activity
 {
@@ -46,9 +44,10 @@ public class TelephonyManagerActivity extends Activity
 		final Context c = this;
         final Button button = (Button) findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-			    Intent intent = new Intent(c, WifiManagerActivity.class);
-                startActivity(intent);   
+            @Override
+			public void onClick(View v) {
+			   Intent intent = new Intent(c, WifiManagerActivity.class);
+               startActivity(intent);   
 
             }
         });
