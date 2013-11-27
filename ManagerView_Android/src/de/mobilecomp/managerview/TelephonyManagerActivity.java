@@ -17,10 +17,11 @@ import org.jdom2.input.SAXBuilder;
 
 import com.example.managerview_android.R;
 
-import android.os.AsyncTask;
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
 import android.telephony.NeighboringCellInfo;
 import android.telephony.TelephonyManager;
 import android.telephony.gsm.GsmCellLocation;
@@ -28,7 +29,11 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+
+import de.mobilecomp.managerview.WifiManagerActivity;
+
 
 public class TelephonyManagerActivity extends Activity
 {
@@ -37,6 +42,17 @@ public class TelephonyManagerActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_telephony_manager);
+		
+		final Context c = this;
+        final Button button = (Button) findViewById(R.id.button1);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+			    Intent intent = new Intent(c, WifiManagerActivity.class);
+                startActivity(intent);   
+
+            }
+        });
+
 	}
 
 	@Override
