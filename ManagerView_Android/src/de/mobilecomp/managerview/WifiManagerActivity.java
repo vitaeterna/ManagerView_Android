@@ -92,7 +92,7 @@ public class WifiManagerActivity extends Activity {
 		add("IP Address", wm.getConnectionInfo().getIpAddress());
 		add("Link speed", wm.getConnectionInfo().getLinkSpeed());
 		add("BSSID", wm.getConnectionInfo().getBSSID());
-		add("Rssi (singal strength)", wm.getConnectionInfo().getRssi());
+		add("Rssi (signal strength)", wm.getConnectionInfo().getRssi());
 		
 		add("\n DHCP Info", wm.getDhcpInfo().toString() );
 
